@@ -1,15 +1,12 @@
 import React from 'react';
-import Navbar from './components/Navbar';
 // import { Router } from 'react-router-dom';
 import Router from './router'
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <div className="py-4">
-        <Router />
-      </div>
+      {/* <Navbar /> untuk kepentingan error handler */}
+      <Router />
     </div>
   );
 }

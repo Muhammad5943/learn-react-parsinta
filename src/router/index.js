@@ -3,9 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../views/Home';
 import About from '../views/About';
 import Contact from '../views/Contact';
-import NotFound from '../views/errors/NotFound';
-import NavBar from '../components/Navbar';
 import Login from '../views/auth/Login';
+import Users from '../views/users/Index';
+import UsersShow from '../views/users/Show';
+import NavBar from '../components/Navbar';
+import NotFound from '../views/errors/NotFound';
 
 function Router() {
     return (
@@ -26,6 +28,18 @@ function Router() {
                 <Route path="/contact">
                     <NavBar >
                         <Contact />
+                    </NavBar>
+                </Route>
+
+                <Route exact path="/users">
+                    <NavBar >
+                        <Users />
+                    </NavBar>
+                </Route>
+
+                <Route path="/users/:identifier_id">
+                    <NavBar >
+                        <UsersShow />
                     </NavBar>
                 </Route>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function App() {
+function ClassExample() {
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
     const [name, setName] = useState('')
@@ -47,4 +47,4 @@ function App() {
     );
 }
 
-export default App;
+export default ClassExample;

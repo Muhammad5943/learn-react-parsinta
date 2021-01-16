@@ -4,11 +4,12 @@ import React, { createContext, useEffect, useState } from 'react'
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-    // Using simple example of useContext 
+    // Using simple example of useContext // Its passing through on deference directory {AuthetincatedUser}
     /* const user = {
         name: 'Muhammad Aji Putra'
     } */
 
+    // Using API to get the data
     const [user, setUser] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -21,7 +22,7 @@ const UserProvider = ({children}) => {
 
             setLoading(false)
         } catch (error) {
-            
+            console.log(error.message);
         }
     }
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { UserProvider } from '../views/context/User';
-import AuthenticatedUser from './AuthenticatedUser';
+import { useRecoilValue } from 'recoil';
+import { authUser } from '../store';
+/* import { UserProvider } from '../views/context/User';
+import AuthenticatedUser from './AuthenticatedUser'; */
+
 
 function Navbar({ children }) {
+    const {user} = useRecoilValue(authUser)
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -30,13 +34,20 @@ function Navbar({ children }) {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/users">Users</NavLink>
                             </li>
+
+                            {/* when you using recoil */}
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/users">{user.name}</NavLink>
+                            </li>
+
+                            {/* when yuy prefer using useContext */}
+                            {/* <li className="nav-item">
                                 <NavLink className="nav-link" to="/">
                                     <UserProvider>
                                         <AuthenticatedUser />
                                     </UserProvider>
                                 </NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

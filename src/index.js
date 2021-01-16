@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
 import "bootstrap/dist/js/bootstrap.bundle"
@@ -8,12 +8,26 @@ import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
-ReactDOM.render(
+/* ReactDOM.render(         // *when you using useContext
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+); */
+
+ReactDOM.render(            // *when you using recoil
+  <React.StrictMode>
+    <RecoilRoot>
+      <Suspense fallback={<div>Loading . . .</div>}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Suspense>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );

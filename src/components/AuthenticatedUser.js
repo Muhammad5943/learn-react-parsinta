@@ -7,7 +7,7 @@ function AuthenticatedUser(props) {
     return (
         <div>
             {
-                loading ? <div> Loading . . .</div>
+                loading ? <div>Loading . . .</div>
                 :
                 <div>
                     {user.name}

@@ -1,10 +1,15 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 // import { Router } from 'react-router-dom';
 import Router from './router'
+import { theme } from './store';
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme)
+  const defaultTheme = currentTheme == 'dark' ? 'bg-dark text-white' : 'bg-white text-dark'
+
   return (
-    <div>
+    <div className={`${defaultTheme} vh-100`}>
       {/* <Navbar /> untuk kepentingan error handler */}
       <Router />
     </div>
